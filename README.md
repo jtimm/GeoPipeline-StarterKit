@@ -1,10 +1,8 @@
 # GeoPipeline-StarterKit
 
-A walkthrough on retrieving datasets from [NASA Earthdata](https://urs.earthdata.nasa.gov/home), as well as a template to create machine learning models that use precipitation data to predict targeted hydroelectric dams' energy output/flows.
-
 ## Description
 
-Given a known set of hydroelectric dams and their respective geocoordinates, automatically generate a bounding box with a set padding/buffer size set (in kms) to filter a dataset to be downloaded for specific precipitation data from [NASA Earthdata](https://urs.earthdata.nasa.gov/home). Then, build an ML model to provide insights into the correlated impact on dam energy output in near real-time (NRT).
+A walkthrough on retrieving datasets from [NASA Earthdata](https://urs.earthdata.nasa.gov/home), as well as a template to create machine learning models that use precipitation data in the vicinity of hydroelectric dams to predict resevoir levels.
 
 ## Modules Used
 
@@ -12,7 +10,6 @@ Given a known set of hydroelectric dams and their respective geocoordinates, aut
 - `pandas`: A powerful Python data analysis toolkit, ideal for data manipulation and cleaning.
 - `rasterio`: Handles raster data (like satellite imagery) in Python, making it a crucial tool for geospatial data processing.
 - `requests`: A simple, yet powerful, HTTP library for Python, used for making API calls (such as to retrieve data from NASA Earthdata).
-- `python-dotenv`: A safe way to store and retrieve secrets.
 
 ## Device Requirements
 
@@ -41,11 +38,9 @@ Example output for the [BC Hydro dams as of 2024-01-01](./input/bc-hydro-dam-coo
 [-131.206, 47.576, -113.633, 56.917]
 ```
 
-#### Retrieve dam energy flows
+#### Retrieve hydroelectric resevoir levels
 
-Download a range of historical (net actual flow) data from BC Hydro. This example selects years 2015 to 2023, and they have been saved in the path [input/bc-hydro-net-actual-flow](./input/bc-hydro-net-actual-flow/):
-
-- [BC Hydro - Historical Data (Net Actual Flow)](https://www.bchydro.com/energy-in-bc/operations/transmission/transmission-system/actual-flow-data/historical-data.html)
+TBA
 
 ### 2. NASA Earthdata account setup
 
@@ -112,28 +107,19 @@ Review the script, ensuring the `urls_file` and `output_dir` variables are set a
 ./download-earthdata-from-urls-file.sh
 ```
 
-By default, the downloaded files will have the target path: [input/earthdata-ges-disc/dataset](./input/earthdata-ges-disc/dataset)`.
+By default, the downloaded files will be saved to the the target path: [input/earthdata-ges-disc/dataset](./input/earthdata-ges-disc/dataset).
 
 ### 5. Build a Model
 
-### 6. Query the Earthdata API directly
-
-#### Retrieve and set your Earthdata API Token
-
-1. Create a `.env` file in the root of this repository (if you haven't already).
-1. Visit the [API sign-in link](https://api.giovanni.earthdata.nasa.gov/signin) and agree to the terms. This will generate a token that will last 24 hours.
-1. Assign the generated token value (without quotes) into the `.env` file as variable name `EARTHDATA_API_TOKEN`.
-
-#### Retrieve data directly from the Earthdata API
+TBA
 
 ## References
 
 1. [How to Query and Use NASA Geo-Data for Your Next Data Science Project](https://medium.com/@sirmammingtonham/how-to-query-and-use-nasa-geo-data-for-your-next-data-science-project-27aef13c93d2) by [Ethan Joseph](https://medium.com/@sirmammingtonham)
 1. [Getting NASA data for your next geo-project](https://towardsdatascience.com/getting-nasa-data-for-your-next-geo-project-9d621243b8f3) by [Karan Bhanot](https://medium.com/@bhanotkaran22)
-1. [BC Hydro - Historical Data (Net Actual Flow)](https://www.bchydro.com/energy-in-bc/operations/transmission/transmission-system/actual-flow-data/historical-data.html)
 1. [Wikipedia: Hydroelectric stations owned by BC Hydro](https://en.wikipedia.org/wiki/List_of_generating_stations_in_British_Columbia)
 1. [Goddard Earth Sciences Data and Information Services Center (GES DISC) data collections search](https://disc.gsfc.nasa.gov/)
-1. [GES DISC - NLDAS Mosaic Land Surface Model L4 Hourly Dataset Summary](https://disc.gsfc.nasa.gov/datasets/GPM_3IMERGDL_06/summary)
-1. [GES DISC - NLDAS Mosaic Land Surface Model L4 Hourly Dataset README](https://gpm1.gesdisc.eosdis.nasa.gov/data/GPM_L3/doc/README.GPM.pdf)
+1. [GES DISC - GPM IMERG Late Precipitation L3 1 day 0.1 degree x 0.1 degree V06 (GPM_3IMERGDL) - Summary](https://disc.gsfc.nasa.gov/datasets/GPM_3IMERGDL_06/summary)
+1. [GES DISC - GPM IMERG Late Precipitation L3 1 day 0.1 degree x 0.1 degree V06 (GPM_3IMERGDL) - README](https://gpm1.gesdisc.eosdis.nasa.gov/data/GPM_L3/doc/README.GPM.pdf)
 1. [GES DISC - How to Access GES DISC Data Using wget and curl](https://disc.gsfc.nasa.gov/information/howto?title=How%20to%20Access%20GES%20DISC%20Data%20Using%20wget%20and%20curl)
 1. [GES DISC - How to Generate Earthdata Prerequisite Files](https://disc.gsfc.nasa.gov/information/howto?title=How%20to%20Generate%20Earthdata%20Prerequisite%20Files)
