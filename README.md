@@ -2,7 +2,7 @@
 
 ## Description
 
-A walkthrough on retrieving datasets from [NASA Earthdata](https://urs.earthdata.nasa.gov/home), as well as a template to create machine learning models that use precipitation data in the vicinity of hydroelectric dams to predict resevoir levels and subsequent dam output capcity.
+A walkthrough on retrieving datasets from [NASA Earthdata](https://urs.earthdata.nasa.gov/home), as well as a template to create machine learning models that use precipitation data in the vicinity of hydroelectric dams to predict reservoir levels and subsequent dam output capacity.
 
 ## Modules Used
 
@@ -15,7 +15,7 @@ A walkthrough on retrieving datasets from [NASA Earthdata](https://urs.earthdata
 
 ## Device Requirements
 
-- This project was completed on MacOS, and some of the scripts (ex. `download-earthdata-from-urls-file.sh`) assume use on a MacOS/Linux system (ex. the use of `curl` vs. `wget`). Some minor modifications will be required to run all steps on a Windows device.
+- This project was completed on MacOS, and some of the scripts (ex. [the multi-file download script that uses `curl`](./download-earthdata-from-urls-file.sh)) assume use on a MacOS/Linux system (ex. the use of `curl` vs. `wget`). Some minor modifications will be required to run all steps on a Windows device.
 - The data downloaded in this walkthrough will require just under 2 GB of disk space:
   - 660 MB for the GES DISC precipitation dataset
   - 1.21 GB for the uncompressed reservoir levels database
@@ -42,11 +42,11 @@ Example output for the [BC Hydro dams as of 2024-01-01](./input/bc-hydro-dam-coo
 [-131.206, 47.576, -113.633, 56.917]
 ```
 
-#### Retrieve data for resevoir levels
+#### Retrieve data for reservoir levels
 
 ##### Download the HYDAT reservoir DB
 
-The Government of Canada's [National Water Data Archive: HYDAT page](https://www.canada.ca/en/environment-climate-change/services/water-overview/quantity/monitoring/survey/data-products-services/national-archive-hydat.html) includes a [link](https://collaboration.cmc.ec.gc.ca/cmc/hydrometrics/www/) to a page with an SQLite database containing relevant resevoir water levels.
+The Government of Canada's [National Water Data Archive: HYDAT page](https://www.canada.ca/en/environment-climate-change/services/water-overview/quantity/monitoring/survey/data-products-services/national-archive-hydat.html) includes a [link](https://collaboration.cmc.ec.gc.ca/cmc/hydrometrics/www/) to a page with an SQLite database containing relevant reservoir water levels.
 
 Download [the SQLite database](https://collaboration.cmc.ec.gc.ca/cmc/hydrometrics/www/Hydat_sqlite3_20231120.zip) and the [associated documentation](https://collaboration.cmc.ec.gc.ca/cmc/hydrometrics/www/HYDAT_Definition_EN.pdf).
 
@@ -138,7 +138,7 @@ Further investigation of the [Finlay River](https://en.wikipedia.org/wiki/Finlay
 
 The W.A.C. Bennett Dam is currently [the second-highest capacity dam in all of British Columbia](https://en.wikipedia.org/wiki/List_of_generating_stations_in_British_Columbia), so it would be best to keep this reservoir and the precipitation in its surrounding area within the bounding box.
 
-Thus, using the `dam-coordinates` notebook (mentioned earlier in the [section describing how to determine the bounding box coordinates](#determine-coordinates-bounding-box-for-the-precipitation-dataset)), we can extend the bounding box buffer to 150km, to get a new set of coordinates in the [asdf](#select-an-dataset-based-on-the-desired-characteristics):
+Thus, using the `dam-coordinates` notebook (mentioned earlier in the [section describing how to determine the bounding box coordinates](#determine-coordinates-bounding-box-for-the-precipitation-dataset)), we can extend the bounding box buffer to 150km, to get a new set of coordinates in [a subsequent section](#select-an-dataset-based-on-the-desired-characteristics):
 
 ```python
 [-131.941, 47.126, -112.897, 57.367]
@@ -199,7 +199,7 @@ Since the aforementioned dataset is not checked into this repository, you will n
 
 #### Fill in the download form
 
-Select the appropriate coordinates in the download form. These coordinates were first defined in a [previous section](#determine-coordinates-bounding-box-for-the-dataset) with an initial buffer size of 100km, but were then [re-defined after extending the bounding box to include all relevant reservoirs with a 150km buffer size](#validate-reservoirs-are-within-the-previously-defined-bounding-box) from the outermost dam coordinates:
+Select the appropriate coordinates in the download form. These coordinates were first defined in a [previous section](#determine-coordinates-bounding-box-for-the-precipitation-dataset) with an initial buffer size of 100km, but were then [re-defined after extending the bounding box to include all relevant reservoirs with a 150km buffer size](#validate-reservoirs-are-within-the-previously-defined-bounding-box) from the outermost dam coordinates:
 
 ```python
 [-131.941, 47.126, -112.897, 57.367]
