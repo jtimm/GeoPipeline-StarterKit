@@ -8,6 +8,10 @@ A walkthrough on retrieving datasets from [NASA Earthdata](https://urs.earthdata
 
 - `pandas`: A powerful Python data analysis toolkit, ideal for data manipulation and cleaning.
 - `notebook`: Jupyter Notebooks provides an interactive environment for your data processing and visualization tasks.
+- `xarray`: A Python library for data processing. It’s built upon numpy and `pandas` (and `dask`) libraries to use and process the data in the manner you want.
+- `netcdf4`: This is a bare-bones library for working with NetCDF data (i.e. the `.nc4` extension), which is the format of the precipitation data from GES DISC used in this repository.
+- `matplotlib`: A versatile Python library for creating customizable data visualizations and plots.
+- `seaborn`: A data visualization library that provides an aesthetically pleasing and informative way to create statistical graphics.
 
 ## Device Requirements
 
@@ -231,7 +235,7 @@ By default, the downloaded files will be saved to the the target path: [input/ea
 
 ### 5. Build a Model
 
-TBA
+See the [pre-processing notebook](./notebooks/pre-processing.ipynb). This is currently a work in progress, and more will be added soon!
 
 ## References
 
@@ -249,3 +253,4 @@ TBA
 1. [Wikipedia - Finlay River](https://en.wikipedia.org/wiki/Finlay_River)
 1. [Wikipedia - Williston Lake](https://en.wikipedia.org/wiki/Williston_Lake)
 1. [Wikipedia - W.A.C. Bennett Dam](https://en.wikipedia.org/wiki/W._A._C._Bennett_Dam)
+1. [Read and analyze netCDF4 files with xarray in python](https://medium.com/@buzulan.petru/read-and-analyze-netcdf4-files-with-xarray-in-python-1c714fad8a66) by [Petru Buzulan](https://medium.com/@buzulan.petru)
