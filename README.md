@@ -138,7 +138,7 @@ Further investigation of the [Finlay River](https://en.wikipedia.org/wiki/Finlay
 
 The W.A.C. Bennett Dam is currently [the second-highest capacity dam in all of British Columbia](https://en.wikipedia.org/wiki/List_of_generating_stations_in_British_Columbia), so it would be best to keep this reservoir and the precipitation in its surrounding area within the bounding box.
 
-Thus, using the `dam-coordinates` notebook (mentioned earlier in the [section describing how to determine the bounding box coordinates](#determine-coordinates-bounding-box-for-the-precipitation-dataset)), we can extend the bounding box buffer to 150km, to get a new set of coordinates in [a subsequent section](#select-an-dataset-based-on-the-desired-characteristics):
+Thus, using the `dam-coordinates` notebook (mentioned earlier in the [section describing how to determine the bounding box coordinates](#determine-coordinates-bounding-box-for-the-precipitation-dataset)), we can extend the bounding box buffer to 150km, to get a new set of coordinates that will be used later on when [selecting the precipitation dataset](#select-a-dataset-based-on-the-desired-characteristics):
 
 ```python
 [-131.941, 47.126, -112.897, 57.367]
