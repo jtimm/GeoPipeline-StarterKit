@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Downloaded Earthdata URLs text file
-urls_file="input/earthdata-ges-disc/urls/subset_GPM_3IMERGDL_06_20240101_212853_.txt"
+urls_file="input/earthdata-ges-disc/urls/subset_GPM_3IMERGDL_06_20240102_235953_.txt"
 
 # Directory to save the files
 output_dir="input/earthdata-ges-disc/dataset"

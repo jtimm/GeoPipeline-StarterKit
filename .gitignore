@@ -167,3 +167,6 @@ cython_debug/
 
 # Earthdata dataset
 input/earthdata-ges-disc/dataset
+
+# HDAT DB
+input/hydat-db
