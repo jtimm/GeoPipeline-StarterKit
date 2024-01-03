@@ -1,8 +1,21 @@
 # GeoPipeline-StarterKit
 
-## Description
-
 A walkthrough on retrieving datasets from [NASA Earthdata](https://urs.earthdata.nasa.gov/home), as well as a template to create machine learning models that use precipitation data in the vicinity of hydroelectric dams to predict reservoir levels and subsequent dam output capacity.
+
+## Table of Contents
+
+1. [Modules Used](#modules-used)
+1. [Device Requirements](#device-requirements)
+1. [Getting Started](#getting-started)
+   - [1. Retrieve Hydroelectric Dam Data](#1-retrieve-hydroelectric-dam-data)
+     - [Retrieve Dam Coordinates](#retrieve-dam-coordinates)
+     - [Determine Coordinates for the Precipitation Dataset](#determine-coordinates-bounding-box-for-the-precipitation-dataset)
+     - [Retrieve Data for Reservoir Levels](#retrieve-data-for-reservoir-levels)
+   - [2. NASA Earthdata Account Setup](#2-nasa-earthdata-account-setup)
+   - [3. Choose Appropriate Earthdata Dataset](#3-choose-appropriate-earthdata-dataset)
+   - [4. Downloading the Earthdata Dataset](#4-downloading-the-earthdata-dataset)
+   - [5. Build a Model](#5-build-a-model)
+1. [References](#references)
 
 ## Modules Used
 
